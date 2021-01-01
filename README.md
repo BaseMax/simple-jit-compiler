@@ -22,6 +22,8 @@ Note: This also works if you enable `-m32` flag on your compiler. (e.g: `gcc jit
 
 However, this has architectural limitations and does not works everywhere.
 
+[X86 Opcode and Instruction Reference Home](http://ref.x86asm.net/coder32.html#x00)
+
 ## x86 Instructions
 
 Disassembling your assembly or compiled code shows you both the instructions and the machine code that implements them. 
