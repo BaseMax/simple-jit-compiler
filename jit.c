@@ -1,26 +1,39 @@
+/*
+ * @Name: simple-jit-compiler
+ * @Author: Max Base
+ * @Date 2021-01-01
+ * @Repository: https://github.com/BaseMax/simple-jit-compiler
+ */
+
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdlib.h>
 #include <sys/mman.h>
 
 int main(int argc, char *argv[]) {
 	unsigned char code[] = {
-		0xb8,
+		0xb8, // mov
 		0x00,
 		0x00,
 		0x00,
 		0x00,
-		0x83,
-		0xC0,
-		0x05,
-		0x83,
-		0xC0,
-		0x05,
-		0x83,
+
+		// +5
+		0x83, // add
 		0xC0,
 		0x05,
 
-		0xc3,
+		// +5
+		0x83, // add
+		0xC0,
+		0x05,
+
+		// +5
+		0x83, // add
+		0xC0,
+		0x05,
+
+		0xc3, // ret
 	};
 
 	if(argc < 2) {
@@ -35,9 +48,10 @@ int main(int argc, char *argv[]) {
 
 	memcpy(mem, code, sizeof(code));
 	mprotect(mem, sizeof(code), PROT_READ | PROT_EXEC);
+
 	int (*func)() = (int(*)()) mem;
 
-	printf("Your number was: %d\n", func());
+	printf("Result is: %d\n", func());
 
 	return 0; // success
 }
