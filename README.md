@@ -18,6 +18,10 @@ gc jit.c -o jit-c
 ./jit-c
 ```
 
+Note: This also works if you enable `-m32` flag on your compiler. (e.g: `gcc jit.c -o jit -m32`)
+
+However, this has architectural limitations and does not works everywhere.
+
 #### Credit
 
 Thanks to Philip Bohun
