@@ -22,6 +22,21 @@ Note: This also works if you enable `-m32` flag on your compiler. (e.g: `gcc jit
 
 However, this has architectural limitations and does not works everywhere.
 
+## x86 Instructions
+
+Disassembling your assembly or compiled code shows you both the instructions and the machine code that implements them. 
+
+Not only are there hundreds of different x86 instructions, there can be dozens of different machine code encodings for a given instruction (see opcodes in numerical order).  Here are a few examples:
+
+Name | Machine code | Description
+-------- | ------------ | -------------
+add | 0x03 ModR/M |	Add one 32-bit register to another.
+mov |	0x8B ModR/M |	Move one 32-bit register to another.
+mov |	0xB8 DWORD |	Move a 32-bit constant into register eax.
+ret |	0xc3 | 	Returns from current function.
+xor | 	0x33 ModR/M |	XOR one 32-bit register with another.
+xor | 	0x34 BYTE |	XOR register al with this 8-bit constant.
+  
 #### Credit
 
 Thanks to Philip Bohun
