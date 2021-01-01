@@ -38,8 +38,16 @@ mov |	0xB8 DWORD |	Move a 32-bit constant into register eax.
 ret |	0xc3 | 	Returns from current function.
 xor | 	0x33 ModR/M |	XOR one 32-bit register with another.
 xor | 	0x34 BYTE |	XOR register al with this 8-bit constant.
-  
-#### Credit
+
+#### Reading more
+
+- https://gist.github.com/mikesmullin/6259449
+- https://defuse.ca/online-x86-assembler.htm#disassembly
+- https://onlinestringtools.com/convert-string-to-ascii
+- https://en.wikibooks.org/wiki/X86_Assembly/Interfacing_with_Linux
+- https://www.cs.uaf.edu/2016/fall/cs301/lecture/09_28_machinecode.html
+
+### Credit
 
 Thanks to Philip Bohun and Dr. Lawlor (Lecture).
 
