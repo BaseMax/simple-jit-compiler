@@ -39,7 +39,7 @@ xor | 	0x34 BYTE |	XOR register al with this 8-bit constant.
   
 #### Credit
 
-Thanks to Philip Bohun
+Thanks to Philip Bohun and Dr. Lawlor (Lecture).
 
 ---------
 
