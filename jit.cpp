@@ -21,10 +21,11 @@ int main(int argc, char *argv[]) {
 	int num = atoi(argv[1]);
 
 	memcpy(&code[1], &num, 4);
-	void *mem = mmap(NULL, sizeof(code), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);
 
+	void *mem = mmap(NULL, sizeof(code), PROT_READ | PROT_WRITE, MAP_ANON | MAP_PRIVATE, -1, 0);
+	memcpy(mem, code, sizeof(code));
 	mprotect(mem, sizeof(code), PROT_READ | PROT_EXEC);
-	// int (*func)() = (int(*)()) mem;
+
 	int (*func)() = reinterpret_cast<int(*)()>(mem);
 
 	printf("Your number was: %d\n", func());
