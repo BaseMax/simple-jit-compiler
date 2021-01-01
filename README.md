@@ -2,6 +2,22 @@
 
 This project is designed to illustrate the mechanism used in **JIT** compilers development.
 
+## Using
+
+C++ via g++:
+
+```
+g++ jit.cpp -o jit-cpp
+./jit-cpp
+```
+
+C via gcc:
+
+```
+gc jit.c -o jit-c
+./jit-c
+```
+
 #### Credit
 
 Thanks to Philip Bohun
